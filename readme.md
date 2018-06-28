@@ -1,4 +1,8 @@
 ### ExcelUtil
+依赖poi包
+```
+compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+```
 #### 读Excel
 ```
 ExcelUtil poi = new ExcelUtil();
@@ -32,4 +36,23 @@ poi.writeMultiSheet(filePath, res);
 List<String> sheetName = Arrays.asList("sheetName0", "sheetName1", "SheetName2");
 //写多个工作簿，sheet名自己起
 poi.writeMultiSheet(filePath,sheetName, res);
+```
+
+### CSV
+
+#### 读CSV
+```
+CsvUtil csvUtil = new CsvUtil();
+List<List<String>> dataList = new ArrayList<>();
+List<String> line1 = Arrays.asList("I", "am", "a", "girl");
+List<String> line2 = Arrays.asList("I", "am", "a", "boy");
+dataList.add(line1);
+dataList.add(line2);
+csvUtil.write("test.csv", dataList);
+```
+
+#### 写CSV
+```
+CsvUtil csvUtil = new CsvUtil();
+List<List<String>> dataList = csvUtil.read("test.csv");
 ```
