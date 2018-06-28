@@ -56,3 +56,22 @@ csvUtil.write("test.csv", dataList);
 CsvUtil csvUtil = new CsvUtil();
 List<List<String>> dataList = csvUtil.read("test.csv");
 ```
+
+### Mysql
+引入依赖
+```
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.40'
+
+```
+MySqlUtil mySqlUtil = new MySqlUtil();
+mySqlUtil.setURL("jdbc:mysql://localhost:3306/testBase");
+mySqlUtil.setUserName("root");
+mySqlUtil.setPassWord("root");
+//要加载驱动程序等
+mySqlUtil.prepare();
+//这里可以放多个操作
+mySqlUtil.insertRow("test", Arrays.asList("guo", "24"));
+//别忘了关闭连接
+mySqlUtil.closeconnection();
+```

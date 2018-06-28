@@ -16,5 +16,8 @@ dependencies {
 
     // 处理Excel https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
     compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+
 
 }
